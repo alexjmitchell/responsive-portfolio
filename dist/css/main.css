@@ -20,6 +20,79 @@
     .menu-btn.close .btn-line:nth-child(3) {
       transform: rotate(-45deg) translate(7px, -6px); }
 
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  visibility: hidden; }
+  .menu.show {
+    visibility: visible; }
+  .menu-branding, .menu-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden; }
+  .menu-nav {
+    margin: 0;
+    padding: 0;
+    background: rgba(55, 55, 55, 0.9);
+    list-style: none;
+    transform: translate3d(0, -100%, 0);
+    transition: all 0.5s ease-out; }
+    .menu-nav.show {
+      transform: translate3d(0, 0, 0);
+      transition: all 0.5s ease-out; }
+  .menu-branding {
+    background: rgba(68, 68, 68, 0.9);
+    transform: translate3d(0, 100%, 0);
+    transition: all 0.5s ease-out; }
+    .menu-branding.show {
+      transform: translate3d(0, 0, 0);
+      transition: all 0.5s ease-out; }
+    .menu-branding .portrait {
+      width: 250px;
+      height: 250px;
+      background: url("/dist/img/alex-medium.JPG");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-x: -44px;
+      border-radius: 50%;
+      border: 3px solid #66b997; }
+  .menu .nav-item {
+    transform: translate3d(600px, 0, 0);
+    transition: all 0.5s ease-out; }
+    .menu .nav-item.show {
+      transform: translate3d(0, 0, 0);
+      transition: all 0.5s ease-out; }
+    .menu .nav-item.current > a {
+      color: #66b997; }
+  .menu .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 300;
+    transition: all 0.5s ease-out; }
+    .menu .nav-link:hover {
+      color: #66b997; }
+
+.nav-item:nth-child(1).show {
+  transition-delay: 0.1s; }
+
+.nav-item:nth-child(2).show {
+  transition-delay: 0.2s; }
+
+.nav-item:nth-child(3).show {
+  transition-delay: 0.3s; }
+
+.nav-item:nth-child(4).show {
+  transition-delay: 0.4s; }
+
 *,
 *::after,
 *::before {
@@ -72,7 +145,7 @@ header {
   width: 100%; }
 
 .text-secondary {
-  color: #eece1a; }
+  color: #66b997; }
 
 main {
   padding: 4rem;
@@ -82,7 +155,7 @@ main {
     main .icons a {
       padding: 0.4rem; }
       main .icons a:hover {
-        color: #eece1a;
+        color: #66b997;
         transition: all 0.5s ease-out; }
   main#home {
     overflow: hidden; }
